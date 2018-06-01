@@ -1,0 +1,16 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^.*$ ./app.php
+
+# Redirect all IP address (replace the ## with the IP address numerals) to same http://domain_name.com
+RewriteCond %{HTTP_HOST} ^104\.236\.199\.77
+RewriteRule (.*) http://candylove.party/$1 [R=301,L]
+
+# Redirect all IP address (replace the ## with the IP address numerals) to same http://domain_name.com
+#RewriteCond %{HTTP_HOST} ^104\.236\.199\.77\.candy_shop\
+# http://104.236.199.77
+#RewriteRule (.*) http://candylove.party/candy/$1 [R=301,L]
